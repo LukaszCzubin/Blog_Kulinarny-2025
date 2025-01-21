@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    font-family: "Quicksand", serif;
+}
+nav{
+    background: #ffffff;
+    height: 80px;
+    width: 100%;
+    }
+    label.logo{
+        color: black;
+        font-size: 35px;
+      
+ 
+        font-weight: bold;
+    }
+    nav ul{
+      float: right;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    nav ul li{
+        display: inline-block;
+        line-height: 50px;
+        margin: 0 5px;
+    }
+    nav ul li a{
+        color: black;
+        font-size: 17px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 7px 13px;
+        border-radius:3px ;
+    }
+    nav img{
+        height: 100%;
+    }
+    .hero-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        height: 800px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("szybki-obiad-5-pomyslow-na-blyskawiczne-dania-z-letnimi-warzywami.jpg");
+    }
+    
+    .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: xx-large;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    
+    .hero-text p {
+        text-align: center;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+    
+        font-size: large;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    
+    .hero-text button {
+        margin-top: 50px;
+        font-size: large;
+        border-radius: 30px;
+        border: solid white 2px;
+        color: white;
+        background-color: transparent;
+        padding: 5px 20px 5px 20px;
+        font-weight: 100;
+    
+    }
+    .hero-text button:hover{
+    background-color: white;
+    color: black;
+    transition: .5s;
+    
+    }
+    .hero-text a{
+        background-color: transparent;
+    }
+    .box1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .row1{
+        display: flex;
+        flex-direction: row;
+        height: 800px;
+    }
+    .left{
+        width: 50%;
+    }
+    .left .text{
+        font-size: 30px;
+        margin: 120px 80px;
+    }
+    .right{
+        width: 50%;
+    }
+    .right img{
+        width: 100%;
+        height: 100%;
+    }
+    .row2{
+        display: flex;
+        flex-direction: row; 
+    }
+    .box2 header h1{
+display: flex;
+justify-content: center;
+margin-top: 30px;
+    }
+    .gallery{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+   flex-wrap: wrap;
+    }
+    .content{
+        background-color: white;
+       
+        display: flex;
+        width: 20%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+       
+        box-sizing: border-box;
+        float: left;
+      
+    }
+    .content a{
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+ hr{
+    margin: 20px 5px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+ }
+    .content .top{
+        width: 100%;
+        height: 80%;
+        align-items: start;
+    
+        overflow: hidden;
+     
+    }
+   
+    .content .icons .down img{
+        width: 20px;
+       display: flex;
+       justify-content: center;
+       cursor: pointer;
+    }
+    .down {
+      margin: 0px 160px;
+      display: flex;
+     
+      flex-direction: row;
+    }
+    .down p{
+        padding-left: 5px;
+    }
+    .info {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .info_text {
+        text-align: center;
+        width: 37%;
+        height: 100%;
+        align-self: center;
+        padding: 20px;
+        font-size: 50px;
+        font-weight:lighter;
+        font-family: "Noto Sans JP", serif;
+    }
+    .character {
+        width: 35%;
+        height: 35%;
+        padding: 0;
+        background-color: #C40C0C;
+        border-radius: 30px;
+          
+    }
+    
+    .character img {
+        width: 100%;
+    }
+    footer{
+        padding-top: 20px;
+        margin-top: 40px;
+        -webkit-box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
+-moz-box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
+box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
+    }
+    .footer_cont{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+    }
+    .copy p{
+        text-align: center;
+        font-size: 30px;
+      padding-top: 20px;
+    }
+    .footer_logo{
+        width: 10%;
+    }
+    .footer_cont img{
+        width: 130px;
+        height: 100px;
+        justify-content: center;
+        padding: 0 20px;
+    }
+    .team p{
+        text-align: center;
+        font-size: 30px;
+      padding-top: 20px; 
+    }
+    @media screen and (max-width:1000px) {
+        .content {
+            width: 50%;
+        }
+        .left .text{
+            font-size: 15px;
+        }
+        .row1{
+            height: 500px;
+        }
+        .row1 .right img{
+            height: 500px;
+        }
+    }
+    
+    @media screen and (max-width:750px) {
+        .content {
+            width: 100%;
+        }
+        .info{
+            width: 100%;
+            justify-content: center;
+        }
+    .character{
+        width: 50%;
+    }
+    .info_text{
+      
+        width: 100%;
+        font-size: 40px;
+        padding: 0;
+    }
+    }
+    @media screen and (max-width: 858px) {
+        
+    
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            top: 75px;
+            left: -120%;
+            text-align: center;
+            transition: all .5s;
+        }
+    
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+    
+        nav ul li a {
+            font-size: 20px;
+    
+        }
+    
+        nav {
+            position: fixed;
+            top: 0;
+        }
+    
+        a:hover,
+        a.active {
+            background: none;
+            color: #0082e6;
+        }
+    
+      
+    
+    }
+    @media screen and (max-width: 1036px) {
+        label.logo{
+            font-size: 30px; 
+            padding-left: 50px;
+         }
+    }
+    @media screen and (max-width: 484px) {
+        label.logo{
+            font-size: 30px; 
+            padding-left: 50px;
+         }
+         .footer_cont p{
+            font-size: 20px;
+         }
+         .footer_cont img{
+            padding: 0 10px;
+         }
+         .left .text{
+            font-size: 10px;
+            margin: 20px 10px;
+        }
+        .row1{
+            height: 300px;
+        }
+        .row1 .right img{
+            height: 300px;
+        }
+    }
+    @media screen and (max-width: 689px) {
+        label.logo{
+            font-size: 30px; 
+            padding-left: 50px;
+         }
+         .footer_cont p{
+            font-size: 20px;
+         }
+         .footer_cont img{
+            padding: 0 10px;
+         }
+         .left .text{
+            font-size: 30px;
+            margin: 40px 30px;
+        }
+        .row1{
+            height: 300px;
+        }
+        .row1 .right img{
+            height: 300px;
+        }
+    }
+    @media screen and (max-width: 956px) {
+        label.logo{
+            font-size: 30px; 
+            padding-left: 40px;
+         }
+         .left .text{
+            font-size: 10px;
+            margin: 20px 10px;
+        }
+        .row1{
+            height: 300px;
+        }
+        .row1 .right img{
+            height: 300px;
+        }
+    }
+    @media screen and (max-width:320px){
+        label.logo{
+            font-size: 30px; 
+            padding-left: 5;
+            padding-right: 20px;
+        }
+        .hero-text{
+            font-size: 20px;
+        }
+    }
+    @media screen and (max-width:376px){
+        label.logo{
+            font-size: 30px; 
+            padding-left: 5;
+            padding-right: 20px;
+        }
+        .hero-text{
+            font-size: 20px;
+        }
+    }
+    
+    
