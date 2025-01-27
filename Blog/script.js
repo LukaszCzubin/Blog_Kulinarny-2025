@@ -1,60 +1,113 @@
-const hearts = document.getElementById('serce');
-const licznik= document.getElementById('licznik');
-hearts.addEventListener('click' , ()=> {
-    licznik.textContent = parseInt(licznik.textContent) + 1 ;
+let products = JSON.parse(localStorage.getItem("products")) || [
+    { name: "Sushi",  serca: 259,  czySerce: false, image: "zestaw-sushi-na-stole_140725-6831.jpg",  description: "Klasyczne japońskie danie składające się z ryżu, wodorostów i dodatków, takich jak ryby, warzywa czy owoce morza. " },
+    { name: "Łosoś z burakiem", serca: 253, czySerce: false, image: "solony-losos-z-burakami_72772-414.jpg", description: "Wykwintne połączenie pieczonego łososia z kremowym puree z buraka – idealne na elegancki obiad." },
+    { name: "Imbir i Wasabi", serca: -42, czySerce: false, image: "toczy-sie-wewnatrz-czarnej-plyty-z-imbirem-i-wasabi_114579-3179.jpg", description: "Dodatek, który podkręca smak sushi – pikantne wasabi i marynowany imbir, który oczyszcza podniebienie." },
+    { name: "Sushi z Łososiem", serca: 93, czySerce: false, image: "sushi-paczki-z-lososiem-ogorkiem-i-rzodkiewka-na-ciemnym-widoku-z-gory_154293-6015.jpg", description: "Klasyczne sushi z delikatnym łososiem, idealne na kolację z nutą Japonii. " },
+    { name: "Krewetki mniam mniam", serca: 0, czySerce: false, image: "widok-z-boku-na-roladki-sushi-z-krewetkami-awokado-i-serem-smietankowym-podawane-z-imbirem-i-wasabi-na-talerzu-na-drewnie_141793-11180.jpg", description: "Chrupiące krewetki w lekkiej panierce z sosem na bazie majonezu i słodkiego chili." },
+];
+
+
+let currentIndex2 = 0;
+
+function pokazProdukt() {
+    const productContainer = document.getElementById('gallery');
+    productContainer.innerHTML = '';
+
+    for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+        const productDiv = document.createElement('div');
+        productDiv.className = 'content';
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="" onclick="popup2(${i})" class="top">
+          <a href="#" onclick="popup2(${i})"><h3>${product.name}</h3></a>
+          <hr>
+          <div class="icons">
+              <div class="down">
+                  <span class="heart" onclick="zwiekszSerca(${i})">
+                      <img src="heart.png" width="20px" height="20px" id="serduszko-${i}">
+                  </span>
+                  <span id="hearts-${i}">${product.serca}</span>
+              </div>
+          </div>
+          <div id="cardPop-${i}" class="cardPop">
+              <div class="overlay" onclick="popup2(${i})"></div>
+              <div class="kontenciwo">
+                  <div class="lewica">
+                      <img src="${product.image}" alt="" id="cardPic">
+                  </div>
+                  <div class="prawica">
+                      <h1>${product.name}</h1>
+                      <p>${product.description}</p>
+                  </div>
+              </div>
+          </div>`;
+        productContainer.appendChild(productDiv);
+    }
 }
-);
-const hearts2 = document.getElementById('serce2');
-const licznik2= document.getElementById('licznik2');
-hearts2.addEventListener('click' , ()=> {
-    licznik2.textContent = parseInt(licznik2.textContent) + 1 ;
+
+function zwiekszSerca(index) {
+    if (!products[index].czySerce) {
+        products[index].serca++;
+        products[index].czySerce = true;
+        document.getElementById(`hearts-${index}`).innerText = products[index].serca;
+
+        let serce12 = document.getElementById("serduszko-${i}");
+        serce12.src = "heart (1).png";
+    } else {
+        alert("Możesz kliknąć serce tylko raz!");
+    }
 }
-); 
-const hearts3 = document.getElementById('serce3');
-const licznik3= document.getElementById('licznik3');
-hearts3.addEventListener('click' , ()=> {
-    licznik3.textContent = parseInt(licznik3.textContent) + 1 ;
+let dishpic = document.getElementById("dish-pic");
+let inputFile = document.getElementById("fileInput");
+inputFile.onchange = function () {
+    dishpic.src = URL.createObjectURL(inputFile.files[0]);
 }
-); 
-const hearts10 = document.getElementById('serce3');
-const licznik10= document.getElementById('licznik3');
-hearts10.addEventListener('click' , ()=> {
-    licznik10.textContent = parseInt(licznik10.textContent) + 1 ;
+function popup() {
+    document.getElementById("okienko").classList.toggle("active");
 }
-); 
-const hearts4 = document.getElementById('serce3');
-const licznik4= document.getElementById('licznik3');
-hearts4.addEventListener('click' , ()=> {
-    licznik4.textContent = parseInt(licznik4.textContent) + 1 ;
+function popup2(index) {
+    const cardPop = document.getElementById(`cardPop-${index}`);
+    cardPop.classList.toggle('active');
 }
-); 
-const hearts5 = document.getElementById('serce3');
-const licznik5= document.getElementById('licznik3');
-hearts5.addEventListener('click' , ()=> {
-    licznik5.textContent = parseInt(licznik5.textContent) + 1 ;
+
+function ProductAdd() {
+    let nazwaDania = document.getElementById("dishName").value;
+    let desc = document.getElementById("dishDesc").value;
+    let imgInput = document.getElementById("fileInput");
+
+    if (imgInput.files && imgInput.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            let myObject = {
+                name: nazwaDania,
+                czySerce: false,
+                serca: 0,
+                image: e.target.result,
+                description: desc,
+            };
+
+
+            products.push(myObject);
+
+
+            localStorage.setItem("products", JSON.stringify(products));
+
+
+            renderProducts();
+       
+        };
+
+        reader.readAsDataURL(imgInput.files[0]);
+    } else {
+        alert("Proszę wybrać plik!");
+    }
+    document.getElementById("okienko").classList.toggle("active");
 }
-); 
-const hearts6 = document.getElementById('serce3');
-const licznik6= document.getElementById('licznik3');
-hearts6.addEventListener('click' , ()=> {
-    licznik6.textContent = parseInt(licznik6.textContent) + 1 ;
-}
-); 
-const hearts7 = document.getElementById('serce3');
-const licznik7= document.getElementById('licznik3');
-hearts7.addEventListener('click' , ()=> {
-    licznik7.textContent = parseInt(licznik7.textContent) + 1 ;
-}
-); 
-const hearts8 = document.getElementById('serce3');
-const licznik8= document.getElementById('licznik3');
-hearts8.addEventListener('click' , ()=> {
-    licznik8.textContent = parseInt(licznik8.textContent) + 1 ;
-}
-); 
-const hearts9 = document.getElementById('serce3');
-const licznik9= document.getElementById('licznik3');
-hearts9.addEventListener('click' , ()=> {
-    licznik9.textContent = parseInt(licznik9.textContent) + 1 ;
-}
-); 
+
+// 1. Guzik + do tworzenia nowych produktów
+// 2. Popup wyświetlający się po kliknięciu guzika na którym można  dodać nowy produkt
+// 3. Dodanie nowego produktu do listy produktów
+// 4. Stworzenie pop'upa po kliknięciu na dany produkt, gdzie będą się wyświetlały wszystkie informacje o produkcie
+pokazProdukt();
+

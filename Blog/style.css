@@ -4,9 +4,10 @@
     margin:0;
     padding: 0;
     font-family: "Quicksand", serif;
+    scroll-behavior: smooth;
 }
 nav{
-    background: #ffffff;
+    background: #141414;
     height: 80px;
     width: 100%;
     }
@@ -28,7 +29,7 @@ nav{
         margin: 0 5px;
     }
     nav ul li a{
-        color: black;
+        color: white;
         font-size: 17px;
         text-transform: uppercase;
         text-decoration: none;
@@ -44,7 +45,7 @@ nav{
         background-size: cover;
     
         height: 800px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("szybki-obiad-5-pomyslow-na-blyskawiczne-dania-z-letnimi-warzywami.jpg");
+        background-image:  url("fresh-rice-spring-rolls-plate-dual-surface.jpg");
     }
     
     .hero-text {
@@ -52,7 +53,8 @@ nav{
         position: absolute;
         top: 50%;
         left: 50%;
-        font-size: xx-large;
+        font-size: 30px;
+       
         transform: translate(-50%, -50%);
         color: white;
     }
@@ -62,7 +64,7 @@ nav{
         position: absolute;
         top: 70%;
         left: 50%;
-    
+    padding: 10px;
         font-size: large;
         transform: translate(-50%, -50%);
         color: white;
@@ -75,7 +77,7 @@ nav{
         border: solid white 2px;
         color: white;
         background-color: transparent;
-        padding: 5px 20px 5px 20px;
+        padding: 5px 20px ;
         font-weight: 100;
     
     }
@@ -121,7 +123,7 @@ display: flex;
 justify-content: center;
 margin-top: 30px;
     }
-    .gallery{
+    #gallery{
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -131,14 +133,17 @@ margin-top: 30px;
         background-color: white;
        
         display: flex;
-        width: 20%;
+        width: 25%;
         height: 600px;
         display: flex;
         flex-direction: column;
-       
+      
         box-sizing: border-box;
         float: left;
       
+    }
+    .heart{
+        padding-right: 10px;
     }
     .content a{
         text-decoration: none;
@@ -179,6 +184,7 @@ margin-top: 30px;
     }
     .info {
         width: 100%;
+        margin-top: 20px;
         justify-content: center;
         display: flex;
         flex-direction: row;
@@ -240,6 +246,169 @@ box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
         text-align: center;
         font-size: 30px;
       padding-top: 20px; 
+    }
+    #button{
+        background-color: 	#a70000;
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        border-radius: 50%;
+       color: white;
+       font-size: larger;
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #okienko .overlay{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.7);
+        z-index: 1;
+        display: none;
+    }
+    #okienko.active .overlay{
+        display: block;
+    }
+    #okienko.active .kontencik{
+        transition: all 800ms ease-in-out;
+        transform: translate(-50%,-50%) scale(1);
+    }
+    #okienko .kontencik{
+        text-align: center;
+        padding: 30px;
+        border-radius: 25px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0);
+        background: white;
+        z-index: 2;
+    }
+    .downSection{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+   
+    .downSection button{
+        width: 150px;
+        height: 150px;
+        margin: 20px;
+        border: 0;
+        background-color: 	#a70000;
+        color: white;
+        border-radius: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        transition: .4s;
+        cursor: pointer;
+    }
+    .downSection button:hover{
+        width: 170px;
+        height: 170px;
+        background-color: 	#d40404;
+        transition: .4s;
+        border-radius: 30px;
+    
+    }
+    #okienko #dishName{
+        width: 80%;
+        height: 50px;
+        font-size: 30px;
+        border-radius: 5px;
+        margin: 10px;
+    }
+    #okienko #dishDesc{
+        width: 80%;
+        height: 100px;
+        font-size: 30px;
+        border-radius: 5px;
+        margin: 10px;
+    }
+    .cardpop{
+        max-width: 600px;
+        height: 400px;
+        display: flex;
+padding: 20px;
+
+    }
+    
+    .cardPop .overlay{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.7);
+        z-index: 1;
+        display: none;
+    }
+    .cardPop.active .overlay{
+        display: block;
+    }
+    .cardPop .kontenciwo{
+        display: flex;
+        flex-direction: row;
+border: 0;
+        border-radius: 25px;
+       overflow: hidden;
+       position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0);
+        background: white;
+        z-index: 2;
+    }
+    .cardPop.active .kontenciwo{
+        transition: all 200ms ease-in-out;
+        transform: translate(-50%,-50%) scale(1);
+    }
+    .lewica{
+        width: 60%;
+    }
+    .lewica img{
+        width: 100%;
+height: 100%;
+    }
+    .prawica{
+        width: 40%;
+        padding: 20px;
+        font-size: 20px;
+        word-wrap: break-word;
+    }
+    .prawica h1{
+        padding-bottom:30px ;
+    }
+    #placeholder{
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+    }
+    #placeholder img{
+        width: 100%;
+
+    }
+    #fileInput{
+        display: none;
+    }
+    #imageLabel{
+        display: block;
+        background-color: 	#a70000;
+        width: 200px;
+        color: white;
+        padding: 12px;
+        margin: 10px auto;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
     }
     @media screen and (max-width:1000px) {
         .content {
