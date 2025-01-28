@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Kulinarny</title>
+    <title>Sushizilla</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logozilla.png">
 </head>
@@ -15,9 +15,9 @@
 
         <ul>
 
-            <li><a href="#">HOME</a></li>
-            <li> <a href="#">DANIA</a></li>
-            <li> <a href="#">KONTAKT</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li> <a href="#gallery">DANIA</a></li>
+            <li> <a href="#contact">KONTAKT</a></li>
         </ul>
     </nav>
     <div class="hero-image">
@@ -72,7 +72,7 @@
         <div id="gallery">
 
         </div>
-      
+
         <div class="info">
             <div class="character">
                 <img src="kucharz.png" alt="">
@@ -83,7 +83,7 @@
 
         </div>
         <div id="okienko">
-            <div class="overlay"></div>
+            <div class="overlay" onclick="popup()"></div>
             <div class="kontencik">
                 <h1>DODAJ PRZEPIS</h1>
                 <input type="text" placeholder="Nazwa przepisu" id="dishName" limit="50">
@@ -101,15 +101,62 @@
 
 
         </div>
-      
-    </div>
 
+        <div id="contact">
+            <div class="tekscik">
+               <h1 >SKONTAKTUJ SIĘ ZE MNĄ !</h1> 
+            </div>
+            
+            <div class="row3">
+                <div class="information">
+                    <div class="icon">
+                        <img src="phone-call.png" alt="" width="50px" height="50px">
+                    </div>
+                    <h1 class="wielki">Nr TELEFONU</h1>
+                    <p class="dane">+48 123 456 789</p>
+                </div>
+                <div class="information">
+                    <div class="icon">
+                     <img src="email.png" alt="" width="50px" height="50px">   
+                    </div>
+                    
+                    <h1 class="wielki">E-MAIL</h1>
+                <p class="dane">lukaszczubin@interia.pl</p>
+                </div>
+                 <div class="information">
+                    <div class="icon">
+                    <img src="location.png" alt="" width="50px" height="50px">    
+                    </div>
+                
+                   <h1 class="wielki">LOKALIZACJA</h1>
+            <p class="dane">Pszczyna ul.Kopernika</p>
+            </div>
+         
+           <div class="information">
+            <div class="icon">
+             <img src="clock.png" alt=" "width="50px" height="50px">    
+            </div>
+           
+              <h1 class="wielki">Godzina otwarcia</h1>
+        <p class="dane">2:00-23:00</p> 
+        </div>  
+
+
+            </div>
+           
+        </div>
+       
+     
+    </div>
+    </div>
+    </div>
+    </div>
     <footer>
         <div class="footer_cont">
             <div class="copy">
                 <p>Copyright © 2024</p>
             </div>
-            <img src="logo_site.png" alt="">
+            <img src="logozilla.png" alt="">
             <div class="team">
                 <p>Designed by Łukasz Czubin</p>
             </div>

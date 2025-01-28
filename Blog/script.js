@@ -1,9 +1,9 @@
 let products = JSON.parse(localStorage.getItem("products")) || [
-    { name: "Sushi",  serca: 259,  czySerce: false, image: "zestaw-sushi-na-stole_140725-6831.jpg",  description: "Klasyczne japońskie danie składające się z ryżu, wodorostów i dodatków, takich jak ryby, warzywa czy owoce morza. " },
-    { name: "Łosoś z burakiem", serca: 253, czySerce: false, image: "solony-losos-z-burakami_72772-414.jpg", description: "Wykwintne połączenie pieczonego łososia z kremowym puree z buraka – idealne na elegancki obiad." },
-    { name: "Imbir i Wasabi", serca: -42, czySerce: false, image: "toczy-sie-wewnatrz-czarnej-plyty-z-imbirem-i-wasabi_114579-3179.jpg", description: "Dodatek, który podkręca smak sushi – pikantne wasabi i marynowany imbir, który oczyszcza podniebienie." },
-    { name: "Sushi z Łososiem", serca: 93, czySerce: false, image: "sushi-paczki-z-lososiem-ogorkiem-i-rzodkiewka-na-ciemnym-widoku-z-gory_154293-6015.jpg", description: "Klasyczne sushi z delikatnym łososiem, idealne na kolację z nutą Japonii. " },
-    { name: "Krewetki mniam mniam", serca: 0, czySerce: false, image: "widok-z-boku-na-roladki-sushi-z-krewetkami-awokado-i-serem-smietankowym-podawane-z-imbirem-i-wasabi-na-talerzu-na-drewnie_141793-11180.jpg", description: "Chrupiące krewetki w lekkiej panierce z sosem na bazie majonezu i słodkiego chili." },
+    { name: "Sushi",  serca: 259,  czySerce: false, image: "zestaw-sushi-na-stole_140725-6831.jpg",  description: "Klasyczne japońskie danie składające się z ryżu, wodorostów i dodatków, takich jak ryby, warzywa czy owoce morza.<br><br> SKŁADNIKI: <br> 1. Ryż - 100g <br> 2. Wodorosty - 4 liście <br> 3. Ryba - 100g<br><br> SPOSÓB PRZYGOTOWANIA: <br> Krok 1: Ugotuj ryż <br> Krok 2: Ugotuj rybę <br> Krok 3: Ugotuj wodorosty <br> Krok 4: Zawiń ryż i rybę w wodorosta <br> Krok 5: Pokruj sushi <br> Krok 6: Przygotuj na talerzu i jedz :) " },
+    { name: "Łosoś z burakiem", serca: 253, czySerce: false, image: "solony-losos-z-burakami_72772-414.jpg", description: "Wykwintne połączenie pieczonego łososia z kremowym puree z buraka – idealne na elegancki obiad. <br><br> SKŁADNIKI: <br> 1.Łosoś <br> 2. Burak <br> 3. Przyprawy <br><br> SPOSÓB PRZYGOTOWANIA: <br> nie wiem wsumie" },
+    { name: "Imbir i Wasabi", serca: -42, czySerce: false, image: "toczy-sie-wewnatrz-czarnej-plyty-z-imbirem-i-wasabi_114579-3179.jpg", description: "Dodatek, który podkręca smak sushi – pikantne wasabi i marynowany imbir, który oczyszcza podniebienie. <br><br> SKŁADNIKI: <br> 1. Wasabi - 100g <br> 2. Imbir - 100g" },
+    { name: "Sushi z Łososiem", serca: 93, czySerce: false, image: "sushi-paczki-z-lososiem-ogorkiem-i-rzodkiewka-na-ciemnym-widoku-z-gory_154293-6015.jpg", description: "Klasyczne sushi z delikatnym łososiem, idealne na kolację z nutą Japonii. <br><br> SKŁADNIKI: <br>1. Sushi z łososiem <br><br> SPOSÓB PRZYGOTOWANIA: <br> Krok 1: Potrawa jest gotowa :) " },
+    { name: "Krewetki mniam mniam", serca: 0, czySerce: false, image: "widok-z-boku-na-roladki-sushi-z-krewetkami-awokado-i-serem-smietankowym-podawane-z-imbirem-i-wasabi-na-talerzu-na-drewnie_141793-11180.jpg", description: "Chrupiące krewetki w lekkiej panierce z sosem na bazie majonezu i słodkiego chili.Na to nie potrzeba przepisu :)" },
 ];
 
 
@@ -59,6 +59,8 @@ function zwiekszSerca(index) {
 }
 let dishpic = document.getElementById("dish-pic");
 let inputFile = document.getElementById("fileInput");
+
+
 inputFile.onchange = function () {
     dishpic.src = URL.createObjectURL(inputFile.files[0]);
 }
@@ -89,15 +91,10 @@ function ProductAdd() {
 
 
             products.push(myObject);
-
-
             localStorage.setItem("products", JSON.stringify(products));
-
-
             renderProducts();
        
         };
-
         reader.readAsDataURL(imgInput.files[0]);
     } else {
         alert("Proszę wybrać plik!");
@@ -105,9 +102,5 @@ function ProductAdd() {
     document.getElementById("okienko").classList.toggle("active");
 }
 
-// 1. Guzik + do tworzenia nowych produktów
-// 2. Popup wyświetlający się po kliknięciu guzika na którym można  dodać nowy produkt
-// 3. Dodanie nowego produktu do listy produktów
-// 4. Stworzenie pop'upa po kliknięciu na dany produkt, gdzie będą się wyświetlały wszystkie informacje o produkcie
 pokazProdukt();
 

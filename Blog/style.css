@@ -44,7 +44,7 @@ nav{
         background-repeat: no-repeat;
         background-size: cover;
     
-        height: 800px;
+        height: 1000px;
         background-image:  url("fresh-rice-spring-rolls-plate-dual-surface.jpg");
     }
     
@@ -143,7 +143,8 @@ margin-top: 30px;
       
     }
     .heart{
-        padding-right: 10px;
+        padding: 0 10px;
+        margin-left: 30px;
     }
     .content a{
         text-decoration: none;
@@ -214,7 +215,7 @@ margin-top: 30px;
         width: 100%;
     }
     footer{
-        padding-top: 20px;
+      
         margin-top: 40px;
         -webkit-box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
 -moz-box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
@@ -223,10 +224,11 @@ box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
     .footer_cont{
         width: 100%;
         display: flex;
+        
         justify-content: center;
         flex-direction: row;
-        color: rgb(0, 0, 0);
-        background-color: rgb(255, 255, 255);
+        color: white;
+        background-color: #141414;
     }
     .copy p{
         text-align: center;
@@ -240,7 +242,7 @@ box-shadow: 0px -12px 40px -16px rgba(66, 68, 90, 1);
         width: 130px;
         height: 100px;
         justify-content: center;
-        padding: 0 20px;
+       
     }
     .team p{
         text-align: center;
@@ -387,6 +389,36 @@ height: 100%;
     .prawica h1{
         padding-bottom:30px ;
     }
+    #contact{
+        margin-top: 50px;
+    }
+    .row3{
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 200px;
+        flex-wrap: wrap;
+    }
+     .tekscik{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .information{
+        display: flex;
+        justify-content: center;
+        width: 20%;
+      height: 100%;
+      text-align: center;
+        padding: 10px;
+        flex-direction: column;
+    }
+    .information .icon{
+        display: flex;
+        justify-content: center;
+
+    }
     #placeholder{
         width: 300px;
         height: 200px;
@@ -427,7 +459,7 @@ height: 100%;
     
     @media screen and (max-width:750px) {
         .content {
-            width: 100%;
+            width: 50%;
         }
         .info{
             width: 100%;
@@ -479,7 +511,10 @@ height: 100%;
             color: #0082e6;
         }
     
-      
+        .left .text{
+            font-size: 30px;
+            margin: 20px 10px;
+        }
     
     }
     @media screen and (max-width: 1036px) {
@@ -487,6 +522,9 @@ height: 100%;
             font-size: 30px; 
             padding-left: 50px;
          }
+         .hero-text button{
+            margin-top: 150px;
+        }
     }
     @media screen and (max-width: 484px) {
         label.logo{
@@ -518,6 +556,9 @@ height: 100%;
          .footer_cont p{
             font-size: 20px;
          }
+         .heart{
+            margin-left: -100px;
+         }
          .footer_cont img{
             padding: 0 10px;
          }
@@ -531,6 +572,15 @@ height: 100%;
         .row1 .right img{
             height: 300px;
         }
+        .hero-text button{
+            margin-top: 130px;
+        }
+        .information{
+            width: 30%;
+        }
+        .footer_cont{
+    margin-top: 300px;
+        }
     }
     @media screen and (max-width: 956px) {
         label.logo{
@@ -538,7 +588,7 @@ height: 100%;
             padding-left: 40px;
          }
          .left .text{
-            font-size: 10px;
+            font-size: 20px;
             margin: 20px 10px;
         }
         .row1{
@@ -547,6 +597,7 @@ height: 100%;
         .row1 .right img{
             height: 300px;
         }
+
     }
     @media screen and (max-width:320px){
         label.logo{
@@ -564,8 +615,54 @@ height: 100%;
             padding-left: 5;
             padding-right: 20px;
         }
+        .kontencik{
+            width: 100%;
+            padding: 0;
+        }
         .hero-text{
             font-size: 20px;
+        }
+        .hero-text button{
+            margin-top: 100px;
+        }
+        .content{
+            width: 100%;
+        }
+        .kontenciwo{
+            width: 90%;
+        }
+        .left .text{
+            font-size: 15px;
+            margin: 20px 10px;
+        }
+        .left{
+            width: 100%;
+height: 300px;
+        }
+        .right{
+            width: 100%;
+     
+        }
+        .row1{
+            flex-direction: column-reverse;
+            margin-top: 60px;
+        }
+        .row2{
+            flex-direction: column;
+            
+        }
+        #contact{
+            flex-direction: column;
+        }
+        .information{
+            width: 100%;
+        }
+        .tekscik{
+            justify-content: center;
+            text-align: center;
+        }
+        .footer_cont{
+            margin-top: 800px;
         }
     }
     
