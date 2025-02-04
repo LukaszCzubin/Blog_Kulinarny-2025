@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        hideLoader();
+        showContent();
+    }, 2100);
+    function hideLoader() {
+        const loader = document.getElementById("loader");
+        loader.style.display = "none";
+    }
+    function showContent() {
+        const content = document.getElementById("container");
+        content.style.display = "block";
+    }
+});
+
+
 let products = JSON.parse(localStorage.getItem("products")) || [
     { name: "Sushi",  serca: 259,  czySerce: false, image: "zestaw-sushi-na-stole_140725-6831.jpg",  description: "Klasyczne japońskie danie składające się z ryżu, wodorostów i dodatków, takich jak ryby, warzywa czy owoce morza.<br><br> SKŁADNIKI: <br> 1. Ryż - 100g <br> 2. Wodorosty - 4 liście <br> 3. Ryba - 100g<br><br> SPOSÓB PRZYGOTOWANIA: <br> Krok 1: Ugotuj ryż <br> Krok 2: Ugotuj rybę <br> Krok 3: Ugotuj wodorosty <br> Krok 4: Zawiń ryż i rybę w wodorosta <br> Krok 5: Pokruj sushi <br> Krok 6: Przygotuj na talerzu i jedz :) " },
     { name: "Łosoś z burakiem", serca: 253, czySerce: false, image: "solony-losos-z-burakami_72772-414.jpg", description: "Wykwintne połączenie pieczonego łososia z kremowym puree z buraka – idealne na elegancki obiad. <br><br> SKŁADNIKI: <br> 1.Łosoś <br> 2. Burak <br> 3. Przyprawy <br><br> SPOSÓB PRZYGOTOWANIA: <br> nie wiem wsumie" },
@@ -38,6 +54,9 @@ function pokazProdukt() {
                   <div class="prawica">
                       <h1>${product.name}</h1>
                       <p>${product.description}</p>
+                      <br>
+                      <br>
+                      <a href="przepis.html">Zobacz przepis</a>
                   </div>
               </div>
           </div>`;
